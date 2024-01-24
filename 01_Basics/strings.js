@@ -1,83 +1,110 @@
 // Creating strings:
-
-// Using single quotes
 let singleQuotesString = "Hello, World!";
+let doubleQuotesString = "JavaScript is awesome!";
 
-// Using double quotes
-let doubleQuotesString = "JavaScript is awesome!"; //This way is much more preffered as it reduces confusion
+// Concatenation:
+let firstName = "John",
+  lastName = "Doe";
+let fullName = `${firstName} ${lastName}`;
+console.log(fullName); // Output: John Doe
 
-//Concatenating the strings
-let firstName = "Shubham";
-let lastName = "Patil";
-let fullName = firstName + " " + lastName;
-console.log(fullName);
-
-// String interpolation (using Template literals):
-let age = 27;
-let greeting = `My name is ${firstName} ${lastName} and I'm  ${age} years old.`;
-console.log(greeting);
-
-// Accessing elements  in a string:
+// Accessing characters in a string:
 let myString = "Hello";
-let firstChar = myString[0]; // Accessing the first character
-console.log(firstChar); //
+let firstChar = myString[0];
+console.log(firstChar); // Output: H
 
 // String length:
 let strLength = myString.length;
-console.log(strLength);
+console.log(strLength); // Output: 5
 
 // String methods:
-
-// toUpperCase() and toLowerCase()
 let uppercaseString = myString.toUpperCase();
 let lowercaseString = myString.toLowerCase();
-console.log(uppercaseString);
-console.log(lowercaseString);
+console.log(uppercaseString, lowercaseString); // Output: HELLO hello
 
-// indexOf() and lastIndexOf()
 let indexOfO = myString.indexOf("o");
 let lastIndexOfO = myString.lastIndexOf("o");
-console.log(indexOfO);
-console.log(lastIndexOfO);
+console.log(indexOfO, lastIndexOfO); // Output: 4 4
 
-// slice()
-let slicedString = myString.slice(1, 4); // Slicing from index 1 to 3
-console.log(slicedString); // Output: ell
+let slicedString = myString.slice(1, 4);
+let substring = myString.substring(1, 4);
+console.log(slicedString, substring); // Output: ell ell
 
-// substring()
-let substring = myString.substring(1, 4); // Extracting characters from index 1 to 3
-console.log(substring); // Output: ell
-console.log(myString); // Output: ell
-
-// replace()
 let newString = myString.replace("Hello", "Hi");
 console.log(newString); // Output: Hi
 
-// split()
-let wordsArray = myString.split(" "); // Splitting the string into an array
+let wordsArray = myString.split(" ");
 console.log(wordsArray); // Output: ['Hello']
 
-// String comparison:
-let str1 = "apple";
-let str2 = "banana";
-let comparisonResult = str1.localeCompare(str2);
+let comparisonResult = "apple".localeCompare("banana");
 console.log(comparisonResult); // Output: -1 (str1 comes before str2)
 
-// Escape characters:
-let escapeExample = "This is a single 'quote' inside a string.";
-console.log(escapeExample);
+// Advanced Examples:
+let complexString = "   JavaScript is amazing!   ";
+let trimmedString = complexString.trim();
+console.log(trimmedString); // Output: JavaScript is amazing!
 
-// Multi-line strings (Template literals):
-let multiLineString = `
-  This is a
-  multi-line
-  string.
-`;
-console.log(multiLineString);
+let stringWithNumbers = "12345";
+let numericValue = Number(stringWithNumbers);
+console.log(numericValue); // Output: 12345
 
-// String immutability:
-let immutableString = "Hello";
-// The following line does not modify the original string
-let modifiedString = immutableString.toUpperCase();
-console.log(immutableString); // Output: Hello
-console.log(modifiedString); // Output: HELLO
+let reversedString = myString.split("").reverse().join("");
+console.log(reversedString); // Output: olleH
+
+let stringWithWhitespace = "   Trim me!   ";
+let trimmedLeft = stringWithWhitespace.trimStart();
+let trimmedRight = stringWithWhitespace.trimEnd();
+console.log(trimmedLeft, trimmedRight); // Output: 'Trim me!   ', '   Trim me!'
+
+// Checking if a string starts/ends with a specific substring:
+let startsWithHello = myString.startsWith("Hello");
+let endsWithWorld = myString.endsWith("World");
+console.log(startsWithHello, endsWithWorld); // Output: true false
+
+// Repeating a string:
+let repeatedString = "abc".repeat(3);
+console.log(repeatedString); // Output: abcabcabc
+
+// Checking if a string includes a specific substring:
+let includesSubstring = myString.includes("lo");
+console.log(includesSubstring); // Output: true
+
+// Converting a string to an array of characters:
+let charArray = Array.from(myString);
+console.log(charArray); // Output: ['H', 'e', 'l', 'l', 'o']
+
+// Extracting a substring using substr():
+let substringWithIndex = myString.substr(1, 3);
+console.log(substringWithIndex); // Output: ell
+
+// Padding a string:
+let paddedString = "5".padStart(3, "0");
+console.log(paddedString); // Output: '005'
+
+// Finding the first occurrence of a character:
+let firstOccurrenceIndex = myString.indexOf("l");
+console.log(firstOccurrenceIndex); // Output: 2
+
+// Checking if a string contains only numeric characters:
+let numericString = "12345";
+let isNumeric = /^\d+$/.test(numericString);
+console.log(isNumeric); // Output: true
+
+// Converting a string to an array of words:
+let sentence = "JavaScript is a powerful language";
+let wordArray = sentence.split(" ");
+console.log(wordArray); // Output: ['JavaScript', 'is', 'a', 'powerful', 'language']
+
+// Substring extraction using substr():
+let extractedSubstring = myString.substr(1, 3);
+console.log(extractedSubstring); // Output: ell
+
+// Iterating over characters in a string:
+for (let char of myString) {
+  console.log(char);
+}
+
+// Concatenating multiple strings with join():
+let stringArray = ["JavaScript", "is", "fun"];
+let concatenatedString = stringArray.join(" ");
+console.log(concatenatedString); // Output: JavaScript is fun
